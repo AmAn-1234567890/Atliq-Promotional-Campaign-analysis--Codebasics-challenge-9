@@ -390,7 +390,7 @@ FROM cte)
 SELECT 
    category,
    product_name,
-   ROUND((sum(after_rev)-sum(before_rev))/sum(before_rev),2) AS IR_Percentage
+   100*ROUND((sum(after_rev)-sum(before_rev))/sum(before_rev),0) AS IR_Percentage
    FROM cte2
    GROUP BY product_name
    ORDER BY IR_Percentage DESC
