@@ -321,7 +321,9 @@ SELECT
     FROM
     `dim_campaigns` AS c
         INNER JOIN
-    `fact_events` AS f ON c.campaign_id = f.campaign_id;
+    `fact_events` AS f ON c.campaign_id = f.campaign_id
+        INNER JOIN
+    `dim_products` AS p ON f.product_code = p.product_code;
 
 -- STEP 2-
 
